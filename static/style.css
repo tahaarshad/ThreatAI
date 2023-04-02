@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+  font-family: "Roboto", sans-serif !important;
+  background-color: #121212 !important; /* black */
+  color: #fff !important; /* white */
+}
+
+a {
+  color: #fff !important;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  filter: drop-shadow(0 0 30px #006466);
+}
+.table-head {
+  text-align: center;
+}
+td {
+  text-align: center;
+  height: 50px;
+}
+th,
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+/* define the transition classes */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.headline {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.steps {
+  margin-bottom: 20px;
+}

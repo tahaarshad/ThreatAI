@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThreatAI</title>
+    <!--Load Vue from Server-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Import FontAwesome Library-->
+    <script
+      src="https://kit.fontawesome.com/a034fe5f30.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Link CSS File for styling-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" />
+
+    <!--Bootstrap CDN-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="app">
+      <section class="pb-5">
+        <nav class="navbar navbar-expand-lg navbar-light py-4">
+          <div class="container">
+            <a class="navbar-brand" href="#">
+              <i class="fa-solid fa-circle-nodes" style="color: #2596be"></i
+              >ThreatAI
+            </a>
+            <div>
+              <a class="btn btn-primary" href="#"
+                >Github Link
+                <span><i class="fa-solid fa-square-arrow-up-right"></i></span
+              ></a>
+            </div>
+          </div>
+        </nav>
+        <div class="container pt-5">
+          <div class="row align-items-center mb-5">
+            <div class="col-12 col-md-10 col-lg-5 mb-5 mb-lg-0">
+              <h2 class="display-4 fw-bold mb-5">AI-Enabled Honeypot</h2>
+              <p class="lead text-muted mb-5">
+                A Network Honeypot that utilizes Machine Learning to classify
+                attacks based on the tactic being employed by the attacker.
+              </p>
+              <div class="d-flex flex-wrap">
+                <a class="btn btn-primary me-2 mb-2 mb-sm-0" href="#"
+                  >Research Paper (Coming Soon)
+                  <span><i class="fa-solid fa-paperclip"></i></span
+                ></a>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 offset-lg-1">
+              <img class="img-fluid" src="./images/hero-1.jpeg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container text-center py-lg-6 py-4">
+        <div class="row justify-content-center">
+          <div
+            class="col-xl-7 col-lg-8 col-md-10 mb-4 d-flex justify-content-center flex-wrap"
+          >
+            <div class="lc-block">
+              <i
+                class="fa-solid fa-laptop-code fa-2xl"
+                style="color: #2596be"
+              ></i>
+            </div>
+          </div>
+          <div class="col-xl-7 col-lg-8 col-md-10">
+            <div class="lc-block mb-4">
+              <div editable="rich">
+                <h2 class="rfs-25 fw-bolder">Project Demo</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-9 col-sm-10 col-xl-6">
+            <div class="lc-block">
+              <div editable="rich">
+                <p class="lead">
+                  Below is a table of threats classified by the machine leaning
+                  algorithm (LSTM). Click on "More Info" to learn more about the
+                  IP address, the attackers tactics and mitigation techniques.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <template>
+        <div class="container my-5">
+          <div
+            v-for="step in steps"
+            class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg steps"
+          >
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+              <h2 class="display-4 fw-bold lh-1">{{step.title}}</h2>
+              <p class="lead">{{step.content}}</p>
+              <div
+                class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
+              >
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"
+                >
+                  Run Script
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary btn-lg px-4"
+                >
+                  Default
+                </button>
+              </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+              <img
+                class="rounded-lg-3"
+                src="./images/step1.png"
+                alt=""
+                width="720"
+              />
+            </div>
+          </div>
+        </div>
+      </template> -->
+
+      <template>
+        <div class="container my-3">
+          <div
+            v-for="step
+            in
+            steps"
+            class="row p-2 pb-0 pe-lg-0 pt-lg-3 align-items-center rounded-3 border shadow-lg steps"
+          >
+            <div class="col-lg-7 p-2 p-lg-3 pt-lg-2">
+              <h2 class="display-6 fw-bold lh-1">{{step.title}}</h2>
+              <p class="lead fs-6">{{step.content}}</p>
+              <div
+                class="d-grid gap-2 d-md-flex justify-content-md-start mb-2 mb-lg-2"
+              >
+                <button
+                  type="“button”"
+                  class="btn btn-primary btn-sm px-2 me-md-2"
+                  @click="handleButtonClick(step)"
+                >
+                  Run Script
+                </button>
+                <p v-if="step.message">{{ step.message }}</p>
+                <p v-if="step.error" class="error">{{ step.error }}</p>
+              </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+              <img
+                class="rounded-lg-3"
+                v-bind:src="`${step.image}`"
+                alt=""
+                width="720"
+              />
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <template>
+        <div v-if="showThreats" class="container text-center py-5 mb-4">
+          <h2 class="display-6 fw-bold lh-1">Threaths</h2>
+          <br />
+          <br />
+          <transition name="fade" mode="out-in">
+            <div v-if="!moreInfo" key="table1">
+              <h4 class="justify-content-center">
+                Latest:
+                <span class="headline">{{threats[0].src_ip}}</span>
+                employing
+                <span class="headline">{{threats[0].predicted_tactic}}</span>
+                tactic
+                <!-- <a class="btn btn-danger" @click="showNewTable(threaths[0])"
+                  >More Info</a
+                > -->
+              </h4>
+              <br />
+              <br />
+              <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th>Source IP</th>
+                    <th>Commands</th>
+                    <th>Tactic</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(row,index) in threats" :key="index">
+                    <td>{{ row.src_ip }}</td>
+                    <td>{{ row.Commands }}</td>
+                    <td>{{ row.predicted_tactic }}</td>
+                    <td>
+                      <a class="btn btn-danger" @click="showNewTable(row)"
+                        >More Info</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div v-else key="table2">
+              <a class="btn btn-secondary" @click="returnBack()">
+                <span><i class="fa-solid fa-circle-arrow-left"></i></span>
+                Back</a
+              >
+              <br />
+              <br />
+
+              <h4>
+                Selected IP:
+                <span class="headline">{{ selectedIP[0].ip}}</span>
+              </h4>
+              <br />
+              <br />
+              <table class="table table-dark">
+                <tbody>
+                  <tr>
+                    <th>Tactic</th>
+                    <td>{{ selectedIP[0].tactic}}</td>
+                  </tr>
+                  <tr>
+                    <th>Command</th>
+                    <td>{{ selectedIP[0].command}}</td>
+                  </tr>
+                  <tr>
+                    <th>Tactic</th>
+                    <td>{{ selectedIP[0].tactic}}</td>
+                  </tr>
+                  <tr>
+                    <th>IP Reputation</th>
+                    <td>{{ selectedIP[0].reputation}}</td>
+                  </tr>
+                  <tr>
+                    <th>Country</th>
+                    <td>{{ selectedIP[0].country}}</td>
+                  </tr>
+                  <tr>
+                    <th>ISP</th>
+                    <td>{{ selectedIP[0].isp}}</td>
+                  </tr>
+                  <tr>
+                    <th>Mitigation</th>
+                    <td>{{ selectedIP[0].mitigation}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </transition>
+        </div>
+      </template>
+    </div>
+
+    <script>
+      let webapp = new Vue({
+        el: "#app",
+        data: {
+          steps: [
+            {
+              title: "Step-1: Conversion",
+              content:
+                "A python script is run to convert the .gz file .csv for easy preprocessing",
+              image: "./images/step1.png",
+              clickMethod: "runConversion",
+              message: "",
+              error: "",
+            },
+            {
+              title: "Step-2: Preprocessing",
+              content:
+                "Multiple scripts are run in sequence to prepare the data for applying ML",
+              image: "./images/step2.png",
+              clickMethod: "runPreprocessing",
+              message: "",
+              error: "",
+            },
+            {
+              title: "Step-3: Running ML Model",
+              content:
+                "The LSTM model is applied to the data for classification",
+              image: "./images/step3.png",
+              clickMethod: "runMLModel",
+              message: "",
+              error: "",
+            },
+          ],
+          threats: [],
+          showThreats: false,
+          moreInfo: false,
+          selectedIP: [],
+          mitigationList: [
+            {
+              tactic: "Initial Access",
+              mitigation:
+                "One way to mitigate the risk of initial access attacks is to implement proper network segmentation, which can limit the attack surface and prevent lateral movement of attackers. Additionally, implementing strong authentication mechanisms and access controls can help prevent unauthorized access to critical systems and resources.",
+            },
+            {
+              tactic: "Download",
+              mitigation:
+                "To mitigate the risk of download attacks, it is important to implement robust antivirus and anti-malware solutions to detect and prevent malicious files from being downloaded onto systems. Employing network traffic monitoring and intrusion detection systems can also help identify and prevent suspicious downloads.",
+            },
+            {
+              tactic: "Run",
+              mitigation:
+                "To mitigate the risk of run attacks, it is important to ensure that all software and systems are up-to-date with the latest security patches and updates. Employing endpoint security solutions, such as firewalls and intrusion prevention systems, can also help prevent attackers from running malicious code on systems.",
+            },
+            {
+              tactic: "Cover Track",
+              mitigation:
+                "To mitigate the risk of cover track attacks, it is important to implement strong logging and monitoring systems to detect and alert on suspicious activities. Regularly reviewing and analyzing logs can also help identify any suspicious activities and uncover any attempts to cover tracks.",
+            },
+            {
+              tactic: "Escalate Privilege",
+              mitigation:
+                "To mitigate the risk of privilege escalation attacks, it is important to implement least privilege access controls, limiting user privileges to only what is necessary to perform their job functions. Implementing multifactor authentication and regularly monitoring user activity can also help prevent unauthorized privilege escalation.",
+            },
+            {
+              tactic: "Discovery",
+              mitigation:
+                "To mitigate the risk of discovery attacks, it is important to implement strong access controls and encryption mechanisms to protect sensitive data. Regularly monitoring network traffic and user activity can also help identify any attempts at reconnaissance or information gathering by attackers. Additionally, implementing intrusion detection and prevention systems can help prevent unauthorized access to sensitive information.",
+            },
+          ],
+          // message: "",
+          // error: "",
+        },
+        // created: function () {
+        //   console.log("requesting data from server...");
+
+        //   fetch("http://localhost:3000/data").then(function (response) {
+        //     response.json().then(function (data) {
+        //       webapp.threats = data;
+        //       console.log(data);
+        //     });
+        //   });
+        // },
+        methods: {
+          retrieveThreats() {
+            console.log("requesting data from server...");
+
+            fetch("http://localhost:3000/data").then(function (response) {
+              response.json().then(function (data) {
+                webapp.threats = data;
+                console.log(data);
+              });
+            });
+          },
+          showNewTable(row) {
+            this.moreInfo = true;
+            this.getIpInfo(row);
+          },
+          showNewThreats() {
+            this.showThreats = true;
+          },
+          returnBack() {
+            this.moreInfo = false;
+            this.selectedIP.splice(0, this.selectedIP.length);
+          },
+          findMitigation(row) {
+            for (let i = 0; i < this.mitigationList.length; i++) {
+              if (this.mitigationList[i].tactic == row.predicted_tactic) {
+                return this.mitigationList[i].mitigation;
+              }
+            }
+          },
+          handleButtonClick(step) {
+            switch (step.clickMethod) {
+              case "runConversion":
+                this.runConversion(step);
+                break;
+              case "runPreprocessing":
+                this.runPreprocessing(step);
+                break;
+              case "runMLModel":
+                this.runMLModel(step);
+                break;
+              default:
+                console.error("Unknown click method:", clickMethod);
+            }
+          },
+          getIpInfo(row) {
+            fetch("/ipinfo/" + row.src_ip)
+              .then((response) => response.json())
+              .then((data) => {
+                let info = {};
+                info.ip = row.src_ip;
+                info.tactic = row.predicted_tactic;
+                info.command = row.Commands;
+                info.mitigation = this.findMitigation(row);
+                info.reputation = data.abuseConfidenceScore;
+                info.country = data.countryName;
+                info.isp = data.isp;
+
+                this.selectedIP.push(info);
+                console.log(this.selectedIP);
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+          },
+          async runConversion(step) {
+            try {
+              const response = await fetch("/convert", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  script: this.script,
+                  inputFile: this.inputFile,
+                }),
+              });
+
+              if (!response.ok) {
+                const error = await response.json();
+                throw new Error(`Request failed: ${error.error}`);
+              }
+
+              const result = await response.json();
+              step.message = result.message;
+              step.error = "";
+            } catch (error) {
+              step.message = "";
+              step.error = error.message;
+            }
+          },
+          async runPreprocessing(step) {
+            try {
+              const response = await fetch("/preprocess", {
+                method: "POST",
+              });
+
+              if (!response.ok) {
+                const error = await response.json();
+                throw new Error(`Request failed: ${error.error}`);
+              }
+
+              const result = await response.json();
+              step.message = result.message;
+              step.error = "";
+            } catch (error) {
+              step.message = "";
+              step.error = error.message;
+            }
+          },
+          async runMLModel(step) {
+            try {
+              const response = await fetch("/classify_tactics", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              });
+
+              const result = await response.json();
+              step.message = result.message;
+              step.error = "";
+              this.retrieveThreats();
+              this.showNewThreats();
+            } catch (error) {
+              step.message = "";
+              step.error = error.message;
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

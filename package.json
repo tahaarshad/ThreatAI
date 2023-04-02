@@ -1,0 +1,22 @@
+{
+  "name": "threatai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "devStart": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "abuseipdb": "^1.0.1",
+    "abuseipdb-client": "^0.1.52",
+    "axios": "^1.3.4",
+    "csv-parser": "^3.0.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "node-fetch": "^2.6.9",
+    "nodemon": "^2.0.22"
+  }
+}
