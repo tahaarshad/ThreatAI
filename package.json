@@ -2,8 +2,9 @@
   "name": "threatai",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "node app.js",
   "scripts": {
+    "start": "node app.js",
     "devStart": "nodemon app.js"
   },
   "author": "",
