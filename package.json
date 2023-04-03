@@ -2,10 +2,9 @@
   "name": "threatai",
   "version": "1.0.0",
   "description": "",
-  "main": "node app.js",
+  "main": "node index.js",
   "scripts": {
-    "start": "node app.js",
-    "devStart": "nodemon app.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
