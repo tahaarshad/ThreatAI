@@ -103,44 +103,6 @@
         </div>
       </div>
 
-      <!-- <template>
-        <div class="container my-5">
-          <div
-            v-for="step in steps"
-            class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg steps"
-          >
-            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-              <h2 class="display-4 fw-bold lh-1">{{step.title}}</h2>
-              <p class="lead">{{step.content}}</p>
-              <div
-                class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
-              >
-                <button
-                  type="button"
-                  class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"
-                >
-                  Run Script
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-outline-secondary btn-lg px-4"
-                >
-                  Default
-                </button>
-              </div>
-            </div>
-            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-              <img
-                class="rounded-lg-3"
-                src="./images/step1.png"
-                alt=""
-                width="720"
-              />
-            </div>
-          </div>
-        </div>
-      </template> -->
-
       <template>
         <div class="container my-3">
           <div
@@ -191,9 +153,6 @@
                 employing
                 <span class="headline">{{threats[0].predicted_tactic}}</span>
                 tactic
-                <!-- <a class="btn btn-danger" @click="showNewTable(threaths[0])"
-                  >More Info</a
-                > -->
               </h4>
               <br />
               <br />
@@ -342,19 +301,7 @@
                 "To mitigate the risk of discovery attacks, it is important to implement strong access controls and encryption mechanisms to protect sensitive data. Regularly monitoring network traffic and user activity can also help identify any attempts at reconnaissance or information gathering by attackers. Additionally, implementing intrusion detection and prevention systems can help prevent unauthorized access to sensitive information.",
             },
           ],
-          // message: "",
-          // error: "",
         },
-        // created: function () {
-        //   console.log("requesting data from server...");
-
-        //   fetch("http://localhost:3000/data").then(function (response) {
-        //     response.json().then(function (data) {
-        //       webapp.threats = data;
-        //       console.log(data);
-        //     });
-        //   });
-        // },
         methods: {
           retrieveThreats() {
             console.log("requesting data from server...");
