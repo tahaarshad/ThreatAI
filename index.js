@@ -156,7 +156,7 @@ app.get("/data", (req, res) => {
 
 // Define your API key
 const apiKey =
-  "306b0c30d9020d5734b09bd463705f980a7724d0d02dd6d09be9806ba4f1e7157d5db545ff5408ba";
+  "INSERT YOUR ABUSEIPDB API KEY";
 
 // Define a route with a parameter for the IP address
 app.get("/ipinfo/:ip", (req, res) => {
